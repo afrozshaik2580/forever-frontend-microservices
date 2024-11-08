@@ -15,7 +15,7 @@ function ListPage( {token} ) {
   async function getProducts() {
     try {
       const response=await axios.get(
-        "http://localhost:8080/products",
+        "https://forever-backend-yw9l.onrender.com/products",
       )
       if(response.status==200){
         setProducts(response.data)
@@ -34,7 +34,7 @@ function ListPage( {token} ) {
   async function removeProduct(productId){
     try {
       const response=await axios.delete(
-        `http://localhost:8080/products/${productId}`,
+        `https://forever-backend-yw9l.onrender.com/products/${productId}`,
         {headers: {Authorization: "Bearer "+ token}}
       )
       
