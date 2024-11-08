@@ -8,7 +8,7 @@ function AdminLogin({setToken}) {
     const loginHandler = async(e)=>{
         try {
             e.preventDefault()
-            const response = await axios.post("http://localhost:8080/auth/login",{email,password})
+            const response = await axios.post("https://forever-backend-yw9l.onrender.com/auth/login",{email,password})
             
             if(response.data){
                 setToken(response.data);
