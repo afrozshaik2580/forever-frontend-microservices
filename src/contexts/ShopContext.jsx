@@ -6,7 +6,7 @@ const ShopContext = createContext();
 
 function ShopContextProvider({children}) {
     
-    const BACKEND_URL="http://localhost:8080";
+    const BACKEND_URL="https://forever-backend-yw9l.onrender.com";
     const [name, setName] = useState('');
     const [products, setProducts]=useState([]);
     const [cartItems, setCartItems] = useState([]);
