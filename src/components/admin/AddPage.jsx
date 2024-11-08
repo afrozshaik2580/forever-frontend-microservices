@@ -70,7 +70,7 @@ function AddPage({ token }) {
         try {
             if(id){
                 response = await axios.put(
-                    `http://localhost:8080/products/${id}`,
+                    `https://forever-backend-yw9l.onrender.com/products/${id}`,
                     JSON.stringify(productData),
                     {   
                         headers: { 
