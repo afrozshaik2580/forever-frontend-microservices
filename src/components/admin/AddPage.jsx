@@ -82,7 +82,7 @@ function AddPage({ token }) {
             }
             else{
                 response = await axios.post(
-                    "http://localhost:8080/products",
+                    "https://forever-backend-yw9l.onrender.com/products",
                     JSON.stringify(productData),
                     {   
                         headers: { 
