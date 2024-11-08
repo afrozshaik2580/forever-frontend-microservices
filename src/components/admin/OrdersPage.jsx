@@ -9,7 +9,7 @@ function OrdersPage({token}) {
     async function getProducts() {
       try {
         const response=await axios.get(
-          "http://localhost:8080/products",
+          "https://forever-backend-yw9l.onrender.com/products",
         )
         if(response.status==200){
           setProducts(response.data)
@@ -31,7 +31,7 @@ function OrdersPage({token}) {
       }
       try {
         const response = await axios.get(
-            "http://localhost:8080/orders/manageorders",
+            "https://forever-backend-yw9l.onrender.com/manageorders",
             { headers: {Authorization :"Bearer "+token } }
         )
         if (response.status === 200) {
@@ -49,7 +49,7 @@ function OrdersPage({token}) {
     const statusHandler = async( event , orderId ) => {
       try {
         const response = await axios.post(
-            "http://localhost:8080/orders/manageorders",
+            "https://forever-backend-yw9l.onrender.com/orders/manageorders",
             {orderId, status : event.target.value},
             {headers:{Authorization : "Bearer "+token}}
         )
