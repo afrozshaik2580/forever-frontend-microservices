@@ -23,7 +23,7 @@ function AdminPage() {
       else{
         try {
           const response= await axios.post(
-            "http://localhost:8080/auth/validateToken",
+            "https://forever-backend-yw9l.onrender.com/auth/validateToken",
             token,
             {headers:{'Content-Type': 'text/plain'}}
           );
