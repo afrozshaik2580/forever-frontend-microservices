@@ -65,7 +65,7 @@ function OrdersPage({token}) {
     }
   
     useEffect(() => {
-      getProducts();
+      // getProducts();
       fetchAllOrders();
     }, [token])
   
