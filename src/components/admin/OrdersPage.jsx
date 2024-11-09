@@ -4,26 +4,26 @@ import parcel_icon from "../../assets/parcel_icon.svg"
 
 function OrdersPage({token}) {
     const [orders, setOrders] = useState([])
-    const [products, setProducts] = useState([])
+    // const [products, setProducts] = useState([])
 
-    async function getProducts() {
-      try {
-        const response=await axios.get(
-          "https://forever-backend-yw9l.onrender.com/products",
-        )
-        if(response.status==200){
-          setProducts(response.data)
-        }
-        else{
-          console.log(response.data);
-        }
-      } catch (error) {
-        setIsModalOpen(true);
-        setModalMessage("Internal server Error! Unable to fetch products");
-        setIsAdded(false);
-        console.log(error.response.data);
-      }
-    }
+    // async function getProducts() {
+    //   try {
+    //     const response=await axios.get(
+    //       "https://forever-backend-yw9l.onrender.com/products",
+    //     )
+    //     if(response.status==200){
+    //       setProducts(response.data)
+    //     }
+    //     else{
+    //       console.log(response.data);
+    //     }
+    //   } catch (error) {
+    //     setIsModalOpen(true);
+    //     setModalMessage("Internal server Error! Unable to fetch products");
+    //     setIsAdded(false);
+    //     console.log(error.response.data);
+    //   }
+    // }
 
     const fetchAllOrders = async () => {
       if (!token) {
@@ -82,11 +82,10 @@ function OrdersPage({token}) {
                   <div>
                     {
                       order.orderItems.map((item, index) => {
-                        const product = products.find(product=>product.id === item.productId);
                         if (index === order.orderItems.length - 1) {
-                          return product && <p className='py-0.5 ' key={index}>{product.name} x {item.quantity} <span>{item.size}</span> </p>
+                          <p className='py-0.5 ' key={index}>{item.product.name} x {item.quantity} <span>{item.size}</span> </p>
                         } else {
-                          return product && <p className='py-0.5 ' key={index}>{product.name} x {item.quantity} <span>{item.size}</span>, </p>
+                          <p className='py-0.5 ' key={index}>{item.product.name} x {item.quantity} <span>{item.size}</span>, </p>
                         }
                       })}
                   </div>
