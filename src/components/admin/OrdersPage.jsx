@@ -31,7 +31,7 @@ function OrdersPage({token}) {
       }
       try {
         const response = await axios.get(
-            "https://forever-backend-yw9l.onrender.com/manageorders",
+            "https://forever-backend-yw9l.onrender.com/orders/manageorders",
             { headers: {Authorization :"Bearer "+token } }
         )
         if (response.status === 200) {
