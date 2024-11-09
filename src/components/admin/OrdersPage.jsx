@@ -82,11 +82,10 @@ function OrdersPage({token}) {
                   <div>
                     {
                       order.orderItems.map((item, index) => {
-                          console.log(item);
                         if (index === order.orderItems.length - 1) {
-                          <p className='py-0.5 ' key={index}>{item.product.name} x {item.quantity} <span>{item.size}</span> </p>
+                          return <p className='py-0.5 ' key={index}>{item.product.name} x {item.quantity} <span>{item.size}</span> </p>
                         } else {
-                          <p className='py-0.5 ' key={index}>{item.product.name} x {item.quantity} <span>{item.size}</span>, </p>
+                          return <p className='py-0.5 ' key={index}>{item.product.name} x {item.quantity} <span>{item.size}</span>, </p>
                         }
                       })}
                   </div>
